@@ -95,7 +95,7 @@ iot-enterprise-platform/
 
  ### Goal: Smart Organization of S3 Bucket Data from IoT Devices
 
- #### To structure S3 data like a data lake with:
+ ### To structure S3 data like a data lake with:
  
     • Logical partitioning (e.g., by device group, ID, and date)
     
@@ -105,7 +105,13 @@ iot-enterprise-platform/
     
     • Compatibility with ETL, ML, and dashboards
 
-#### ....follow the steps below:
+### ....follow the steps below:
+
+#### STEP 1: Organize Your S3 Structure by Group, Device, Date
+
+* Use this folder/key format in your AWS IoT Rule. Check a good rule in step 6 of the preceding project here:   https://github.com/manuelbomi/Enterprise-Scale-IoT-Device-Management-Data-Ingestion-Using-AWS-Services-for-thousands-IoT-Devices
+  
+* Accomplish a partitioned storage in your S3. Arrange your data as shown in the partitioned storage format below:
 
 
 
