@@ -18,7 +18,7 @@
 
 mermaid
 
-flowchart TD
+flowchart TD;
     A[IoT Devices (200+)] -->|MQTT| B[AWS IoT Core]
     B -->|IoT Rule| C[S3: /group/device/date/]
     C --> D[AWS Glue Crawler]
