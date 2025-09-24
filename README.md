@@ -439,6 +439,107 @@ Suggested visuals:
     • Device claim certificate and private key provisioned
 
 
+### Provision Devices (On Boot) 
+
+#### Flash each device (or Raspberry Pi gateway) with:
+
+    • provisioning/provision_device.py
+    
+    • certs/claim_cert.pem
+    
+    • Device-specific serial ID
+    
+#### Provisioning script auto-registers the device on AWS IoT Core and retrieves unique certs.
+
+#### Example usage: python provisioning/provision_device.py --serial rpi-0042
+
+#### This will:
+
+    1. Connect to AWS IoT Core using the claim certificate
+    
+    2. Publish a provisioning request to the template
+    
+    3. Receive a new cert/key for the device
+    
+    4. Save them under certs/<thing-name>-certificate.pem.crt etc.
+
+*python publishers/mqtt_publisher.py*
+
+
+#### Publishes mock sensor data to MQTT topics: 
+
+#### iot/group1/temp-001/data
+
+
+#### ETL with AWS Glue
+
+    • Upload glue_jobs/clean_and_transform.py to S3
+    
+    • Create Glue Job via AWS Console or CDK
+    
+    • Input = iot-raw-data-bucket/group1/
+    
+    • Output = iot-cleaned-data-bucket/cleaned/
+
+#### Train Machine Learning Model with SageMaker 
+
+* cd sagemaker_pipeline
+  
+*python pipeline.py*
+
+
+#### Pulls Parquet data from S3
+
+    • Trains temperature predictor or anomaly detector
+    
+    • Stores model in s3://iot-cleaned-data-bucket/models/
+    
+#### Create QuickSight Dashboard
+
+    • Connect QuickSight to Athena
+    
+    • Use iot_database.group1_temp001
+    
+    • Build visuals: temperature trend, device health, alert zones
+    
+
+#### Example Use Cases:
+
+    • Predict cold-chain failure from temperature drift
+    
+    • Detect motor failure from vibration spikes
+    
+    • Track asset movement with RFID
+    
+    •  Monitor smart grid energy load
+    
+    • Aggregate CO₂ levels for environmental compliance
+    
+#### Security
+
+    • X.509 certificates per device
+    
+    • MQTT over TLS
+    
+    • IAM Roles for service access
+    
+    • S3 bucket policies for secure access
+    
+#### Scaling Notes
+
+    • Handles 1000+ devices via fleet provisioning and thing groups
+    
+    • Use IoT Device Defender for monitoring large fleets
+    
+    • Use IoT Greengrass for local edge processing (optional)
+
+
+
+
+
+
+
+
 
 
 
