@@ -34,20 +34,25 @@ flowchart TD;
 ```ruby
 iot-enterprise-platform/
 ├── provisioning/
-│   └── provision_device.py      # Auto-onboarding script
+│   └── provision_device.py           # Auto-onboarding script
 ├── publishers/
-│   └── mqtt_publisher.py        # Simulated data publisher
+│   └── mqtt_publisher.py             # Simulated data publisher
 ├── glue_jobs/
-│   └── clean_and_transform.py   # Glue ETL script
+│   └── clean_and_transform.py        # Glue ETL script
 ├── sagemaker_pipeline/
-│   ├── pipeline.py              # SageMaker pipeline
-│   └── train_model.py           # Training script
+│   ├── pipeline.py                   # SageMaker pipeline
+│   ├── train_model.py                # Model training script
+│   ├── data/
+│   │   └── cleansed/                 # Cleansed training data from S3
+│   └── models/                       # Trained models go here
 ├── quicksight/
-│   └── dashboard_guide.md       # Steps to build dashboard
+│   └── dashboard_guide.md            # Steps to build dashboard
 ├── templates/
-│   └── fleet_template_group1.json  # Fleet provisioning template
+│   └── fleet_template_group1.json    # Fleet provisioning template
 ├── certs/
-│   └── claim_cert.pem, keys     # Claim certificates
+│   ├── claim_cert.pem                # Shared claim cert
+│   ├── claim_private.key             # Shared private key
+│   └── AmazonRootCA1.pem             # Root CA
 
 ```
 ---
