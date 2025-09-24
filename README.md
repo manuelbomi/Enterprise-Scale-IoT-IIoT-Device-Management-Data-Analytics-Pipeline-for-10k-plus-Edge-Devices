@@ -30,8 +30,8 @@ flowchart TD
 
 
 ---
-```ruby
-mermaid
+```mermaid
+
 
 flowchart TD
     A[IoT Devices (200+)] -->|MQTT| B[AWS IoT Core]
