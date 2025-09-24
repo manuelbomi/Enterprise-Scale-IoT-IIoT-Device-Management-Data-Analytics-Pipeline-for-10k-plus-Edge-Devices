@@ -71,9 +71,15 @@ iot-enterprise-platform/
 
 
 #### To be able to onboard thousands of different enetrprise IoT/IIoT devices 
-* Start the project from here: 
+* Start the project from here: https://github.com/manuelbomi/Enterprise-Scale-IoT-Device-Management-Data-Ingestion-Using-AWS-Services-for-thousands-IoT-Devices
 
-*Once data from IoT devices is being ingested into Amazon S3, organizing it smartly is the key to enabling:
+*After finishing the inital phase of the project, and once data from IoT/IIoT devices is being ingested into Amazon S3, organizing it smartly is the key to enabling:
+
+      * querying
+      
+      * dashboarding and 
+      
+      * ML pipelines designs:
 
 
 
