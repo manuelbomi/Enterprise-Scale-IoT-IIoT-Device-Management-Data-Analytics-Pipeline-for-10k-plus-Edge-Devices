@@ -410,6 +410,35 @@ Suggested visuals:
 ---
 
 
+## How to Deploy this Repository for Your Enterprise-Scale Project
+
+#### Clone the Repository
+
+* git clone https://github.com/your-org/iot-enterprise-platform.git
+
+* cd iot-enterprise-platform
+
+#### Prerequisites
+
+    • AWS CLI configured (aws configure)
+    
+    • IAM roles for:
+    
+        ◦ AWS IoT access
+        
+        ◦ Glue job execution
+        
+        ◦ SageMaker execution
+        
+    • S3 buckets created:
+    
+        ◦ iot-raw-data-bucket
+
+        ◦ iot-cleaned-data-bucket
+        
+    • Device claim certificate and private key provisioned
+
+
 
 
 
