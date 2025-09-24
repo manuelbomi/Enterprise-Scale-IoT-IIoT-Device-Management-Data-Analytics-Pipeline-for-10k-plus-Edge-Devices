@@ -114,7 +114,7 @@ iot-enterprise-platform/
 * Accomplish a partitioned storage in your S3. Arrange your data as shown in the partitioned storage format below:
 
 ```ruby
----
+
 s3://your-bucket-name/
 ├── group1/
 │   ├── temp-001/
@@ -129,7 +129,38 @@ s3://your-bucket-name/
 │           └── ...
 
 ```
----
+
+Partitioned storage, makes querying and ETL jobs 10x easier. 
+
+##### Modify AWS IoT Rule to Match
+
+* In your IoT Rule, change the S3 action to:
+  
+```ruby
+{
+  "s3": {
+    "roleArn": "arn:aws:iam::<acct>:role/IoTRole",
+    "bucketName": "your-bucket-name",
+    "key": "iot_data/${group()}/${thingName()}/year=${timestamp(\"yyyy\")}/month=${timestamp(\"MM\")}/day=${timestamp(\"dd\")}/${timestamp()}.json"
+  }
+}
+
+```
+The Enterprise Data Architect will need to set the thingName and use the device group name as a tag or topic prefix.
+
+####  STEP 2: Use AWS Glue to Catalog Your IoT Data
+
+Once data is in S3:
+
+2.1 Create Glue Crawlers
+
+    • Create a crawler per device group or a single one for the bucket
+    
+    • Point it to the base S3 path
+
+s3://your-bucket-name/group1/
+
+    • Crawler auto-detects schema and registers tables in the AWS Glue Data Catalog
 
 
 
