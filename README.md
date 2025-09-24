@@ -70,7 +70,7 @@ iot-enterprise-platform/
 |  Live Dashboards               | Real-time metrics & alerts                       |
 
 
-#### To be able to onboard thousands of different enetrprise IoT/IIoT devices 
+### To be able to onboard thousands of different enetrprise IoT/IIoT devices 
 * Start the project from here: https://github.com/manuelbomi/Enterprise-Scale-IoT-Device-Management-Data-Ingestion-Using-AWS-Services-for-thousands-IoT-Devices
 
 *After finishing the inital phase of the project, and once data from IoT/IIoT devices is being ingested into Amazon S3, organizing it smartly is the key to enabling:
@@ -80,6 +80,16 @@ iot-enterprise-platform/
       * dashboarding and 
       
       * ML pipelines designs:
+
+  In the AWS ecosystem, the above 3 components can be achieved by the following AWS services: 
+  
+     *  1. Easy ETL & analysis (via Glue, Athena, Redshift, etc.)
+     
+     *  2. Machine learning pipelines (via SageMaker or custom ML workflows)
+     
+     *  3. Dashboarding (via QuickSight, Tableau, Grafana, etc.)
+
+    
 
 
 
