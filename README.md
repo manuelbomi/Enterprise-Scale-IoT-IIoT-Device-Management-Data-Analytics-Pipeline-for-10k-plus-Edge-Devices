@@ -229,5 +229,43 @@ SageMaker supports:
 
 
 
+#### STEP 5: Dashboarding with QuickSight, Grafana, etc.
+
+##### You can now build dashboards from:
+
+    • Amazon QuickSight via Athena or Redshift
+    
+    • Grafana + Amazon Managed Grafana
+    
+    • Tableau, Power BI via S3/Glue/Redshift
+    
+    
+  #### Example Use Cases:
+
+    • Live dashboards of temperature trends by group
+    
+    • Daily usage summary per device
+    
+    • Alerts for out-of-range sensor readings
+
+
+### Summary of the Workflow (step 1 - step 5)
+
+```ruby
+
+graph TD;
+A[IoT Devices (200+)] -->|MQTT| B[AWS IoT Core]
+B -->|Rule Action| C[S3 (grouped + partitioned)]
+C --> D[AWS Glue Crawler]
+D --> E[Glue Catalog / Athena Tables]
+E --> F1[QuickSight Dashboard]
+E --> F2[ETL via Glue Jobs]
+E --> F3[ML Pipelines in SageMaker]
+
+```
+
+
+
+
 
 
