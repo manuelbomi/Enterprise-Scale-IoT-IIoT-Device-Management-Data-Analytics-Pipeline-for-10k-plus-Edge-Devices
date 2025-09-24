@@ -30,4 +30,25 @@ flowchart TD;
 ---
 
 
+### Repository Structure 
+
+iot-enterprise-platform/
+├── provisioning/
+│   └── provision_device.py      # Auto-onboarding script
+├── publishers/
+│   └── mqtt_publisher.py        # Simulated data publisher
+├── glue_jobs/
+│   └── clean_and_transform.py   # Glue ETL script
+├── sagemaker_pipeline/
+│   ├── pipeline.py              # SageMaker pipeline
+│   └── train_model.py           # Training script
+├── quicksight/
+│   └── dashboard_guide.md       # Steps to build dashboard
+├── templates/
+│   └── fleet_template_group1.json  # Fleet provisioning template
+├── certs/
+│   └── claim_cert.pem, keys     # Claim certificates
+
+
+
 
