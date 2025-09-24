@@ -275,6 +275,142 @@ E --> F3[ML Pipelines in SageMaker]
 | Cost control  | Enable S3 lifecycle policies for cold storage                  |
 
 
+---
+
+
+## Examples of the Workflow  (AWS Glue, AWS SageMaker, AWS QuickSight)
+
+## 1. AWS Glue Job Script (ETL): Clean & Convert IoT Data
+
+#### We desire to create a Glue Job script that:
+
+    • Reads raw IoT JSON data from S3
+    
+    • Filters and cleans the data
+    
+    • Adds metadata (e.g., group/device)
+    
+    • Converts to Parquet for optimized querying
+    
+    • Stores cleaned data into another S3 location
+
+#### Directory Structure in the Repository
+
+```ruby
+glue_jobs/
+├── raw/              # Raw incoming data (JSON)
+│   └── group1/temp-001/year=2025/...
+├── cleaned/          # Cleaned, transformed Parquet files
+└── scripts/
+    └── clean_and_transform.py
+```
+
+* Please check the repo  under  scripts/clean_and_transform.py  for the AWS Glue Script
+
+#### Setup via AWS Console
+
+   #### 1. Upload clean_and_transform.py to S3
+    
+   #### 2. In AWS Glue:
+    
+        ◦ Create a new Glue Job
+        
+        ◦ Choose "A new script authored by you"
+        
+        ◦ Use Spark (Python) and attach the uploaded script
+        
+        ◦ Assign a role with access to both raw and cleaned buckets
+        
+    3. Schedule it or trigger it from a Lambda  (i.e. AWS Lambda Fucntion)
+
+---
+
+## 2.  SageMaker ML Pipeline (Model Training)
+
+#### We desire to use SageMaker Pipelines to:
+
+    • Pull cleaned data from S3
+    
+    • Train a simple temperature prediction model
+    
+    • Evaluate it
+    
+    • Register it for deployment
+
+#####Folder Structure (AWS SageMaker Studio) 
+
+```ruby
+sagemaker-pipeline/
+├── pipeline.py             # Pipeline definition
+├── train_model.py          # Training script
+├── data/
+│   └── cleaned/            # Cleaned training data from S3
+└── models/
+```
+
+* Please check the repo  under sagemaker_pipeline for the script pipeline.py
+
+* Run the script via SageMaker Studio or SDK to start training.
+
+---
+
+## 3. QuickSight Dashboard
+
+#### QuickSight integrates with:
+
+    • Athena (for S3 data)
+    
+    • Glue Catalog
+    
+    • Redshift
+    
+#### Steps to Build Dashboard from IoT Data
+
+#### Step 1: Enable Athena and QuickSight Integration
+
+    • Go to AWS QuickSight
+    
+    • Connect to Athena
+    
+    • Choose the Glue database (iot_database)
+    
+    • Choose the cleaned table (e.g., group1_temp001)
+
+#### Step 2: Build Visuals for teh QuicSight Dashboard
+
+Suggested visuals:
+
+```ruby
+
+| Metric                  | Chart Type               |
+|-------------------------|--------------------------|
+| Temperature over time   | Line chart               |
+| Avg temp per device     | Bar chart                |
+| Device anomalies        | Scatter / Alert indicators |
+| Humidity vs Temp        | Correlation scatterplot  |
+
+```
+
+#### Step 3: Filter & Drilldowns for the QuickSight Dashboard
+
+    • Add filters by group, device_id, timestamp
+    
+    • Use date range slicers
+    
+    • Create custom aggregations for weekly/monthly summaries
+
+### Summary of Deliverables for the Workflow Example
+
+| Output                  | Purpose                                |
+|-------------------------|----------------------------------------|
+| clean_and_transform.py | ETL raw JSON → clean Parquet           |
+| pipeline.py            | ML pipeline for model training         |
+| QuickSight Setup       | For dashboarding and live insights     |
+
+---
+
+
+
 
 
 
