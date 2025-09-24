@@ -70,6 +70,11 @@ iot-enterprise-platform/
 |  Live Dashboards               | Real-time metrics & alerts                       |
 
 
+#### To be able to onboard thousands of different enetrprise IoT/IIoT devices 
+* Start the project from here: 
+
+*Once data from IoT devices is being ingested into Amazon S3, organizing it smartly is the key to enabling:
+
 
 
 
