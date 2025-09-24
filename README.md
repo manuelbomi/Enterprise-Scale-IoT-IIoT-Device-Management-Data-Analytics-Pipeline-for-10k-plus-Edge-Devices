@@ -69,6 +69,7 @@ iot-enterprise-platform/
 |  SageMaker Pipelines           | Train ML models on IoT data                      |
 |  Live Dashboards               | Real-time metrics & alerts                       |
 
+---
 
 ## Enterprise IoT/IIoT Sensors' Data Analytics, ML Pipeline Designs and Dashboarding
 
