@@ -31,7 +31,7 @@ flowchart TD;
 
 
 ### Repository Structure 
-
+```ruby
 iot-enterprise-platform/
 ├── provisioning/
 │   └── provision_device.py      # Auto-onboarding script
@@ -48,6 +48,9 @@ iot-enterprise-platform/
 │   └── fleet_template_group1.json  # Fleet provisioning template
 ├── certs/
 │   └── claim_cert.pem, keys     # Claim certificates
+
+```
+---
 
 
 
