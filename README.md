@@ -94,6 +94,18 @@ iot-enterprise-platform/
 
  ### Goal: Smart Organization of S3 Bucket Data from IoT Devices
 
+ #### To structure S3 data like a data lake with:
+ 
+    • Logical partitioning (e.g., by device group, ID, and date)
+    
+    • Queryability (via Glue Catalog / Athena)
+    
+    • Scalability to 200+ devices
+    
+    • Compatibility with ETL, ML, and dashboards
+
+....follow the steps below:
+
 
 
     
