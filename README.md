@@ -174,6 +174,60 @@ WHERE year = '2025' AND month = '09' AND day = '23'
 
 ```
 
+####  STEP 3: ETL Pipelines for Cleansing, Transforming, and Enriching
+
+#### See how to set up and use AWS Glue here: 
+
+* Use AWS Glue (Spark) or AWS Lambda to:
+  
+    • Clean missing/null values
+  
+    • Transform timestamp formats
+  
+    • Add metadata (e.g., location, thresholds)
+  
+    • Convert JSON → Parquet (columnar, compressed)
+  
+    • Load to Redshift/S3/Databases
+
+#### Example Glue Job:
+
+```ruby
+
+df = glueContext.create_dynamic_frame.from_catalog(
+    database = "iot_database",
+    table_name = "group1_temp001"
+)
+df_clean = df.drop_null_fields().filter(lambda x: x["temperature"] < 80)
+
+```
+
+#### STEP 4: Build Machine Learning Pipelines
+
+#####  Use Amazon SageMaker Pipelines or your own tools to:
+  
+    • Pull training data from S3 or Athena
+  
+    • Run feature engineering (e.g., rolling averages, anomalies)
+  
+    • Train models (e.g., temperature prediction, vibration anomaly detection)
+  
+    • Deploy endpoints (inference)
+
+
+<ins>Example</ins>:
+
+* Train a model to predict HVAC failures based on vibration and temperature patterns.
+
+SageMaker supports:
+
+    • CSV/Parquet input from S3
+    
+    • Athena queries as data source
+    
+    • SageMaker Feature Store
+
+
 
 
 
