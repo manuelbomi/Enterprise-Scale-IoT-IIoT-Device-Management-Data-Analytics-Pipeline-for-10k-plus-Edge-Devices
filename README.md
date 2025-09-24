@@ -265,6 +265,17 @@ E --> F3[ML Pipelines in SageMaker]
 ```
 
 
+### Best Practices
+| Area          | Practice                                                       |
+|---------------|----------------------------------------------------------------|
+| Data layout   | Use partitioned S3 paths (`group/device/date`)                 |
+| File format   | Convert JSON → Parquet for analytics                           |
+| Cataloging    | Use Glue Crawlers to auto-update schema                        |
+| Permissions   | IAM roles must allow IoT → S3 and S3 → Glue/SageMaker          |
+| Cost control  | Enable S3 lifecycle policies for cold storage                  |
+
+
+
 
 
 
