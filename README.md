@@ -58,15 +58,15 @@ iot-enterprise-platform/
 ---
 
 
-| Feature                         | Description                                      |
+| Feature                         | Descsription                                      |
 |---------------------------------|--------------------------------------------------|
-| 🔐 Auto-Onboarding (Fleet Provisioning) | Auto-register devices using claim certificates   |
-| 📡 Secure MQTT Messaging         | MQTT over TLS with X.509 certs                   |
-| 🗂️ S3 Data Lake Partitioning      | `/group/device/year/month/day/` layout          |
-| 🧼 ETL with AWS Glue              | Cleans JSON → Parquet with metadata             |
-| 📊 Athena / QuickSight Integration | Query and visualize sensor data                 |
-| 🤖 SageMaker Pipelines           | Train ML models on IoT data                      |
-| 📈 Live Dashboards               | Real-time metrics & alerts                       |
+|  Auto-Onboarding (Fleet Provisioning) | Auto-register devices using claim certificates   |
+|  Secure MQTT Messaging         | MQTT over TLS with X.509 certs                   |
+|  S3 Data Lake Partitioning      | `/group/device/year/month/day/` layout          |
+|  ETL with AWS Glue              | Cleans JSON → Parquet with metadata             |
+|  Athena / QuickSight Integration | Query and visualize sensor data                 |
+|  SageMaker Pipelines           | Train ML models on IoT data                      |
+|  Live Dashboards               | Real-time metrics & alerts                       |
 
 
 
