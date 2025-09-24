@@ -114,7 +114,7 @@ iot-enterprise-platform/
 * Accomplish a partitioned storage in your S3. Arrange your data as shown in the partitioned storage format below:
 
 ```ruby
-
+---
 s3://your-bucket-name/
 ├── group1/
 │   ├── temp-001/
