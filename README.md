@@ -70,6 +70,8 @@ iot-enterprise-platform/
 |  Live Dashboards               | Real-time metrics & alerts                       |
 
 
+## Enterprise IoT/IIoT Sensors' Data Analytics, ML Pipeline Designs and Dashboarding
+
 ### To be able to onboard thousands of different enetrprise IoT/IIoT devices 
 * Start the project from here: https://github.com/manuelbomi/Enterprise-Scale-IoT-Device-Management-Data-Ingestion-Using-AWS-Services-for-thousands-IoT-Devices
 
@@ -88,6 +90,11 @@ iot-enterprise-platform/
      *  2. Machine learning pipelines (via SageMaker or custom ML workflows)
      
      *  3. Dashboarding (via QuickSight, Tableau, Grafana, etc.)
+
+
+ ### Goal: Smart Organization of S3 Bucket Data from IoT Devices
+
+
 
     
 
