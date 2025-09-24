@@ -104,7 +104,7 @@ iot-enterprise-platform/
     
     • Compatibility with ETL, ML, and dashboards
 
-....follow the steps below:
+#### ....follow the steps below:
 
 
 
