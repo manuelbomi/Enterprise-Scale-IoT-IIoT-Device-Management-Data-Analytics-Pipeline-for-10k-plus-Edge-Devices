@@ -162,6 +162,18 @@ s3://your-bucket-name/group1/
 
     • Crawler auto-detects schema and registers tables in the AWS Glue Data Catalog
 
+2.2 Resulting Table Structure (in Athena/Redshift Spectrum)
+
+* Run SQL queries like:
+
+```ruby
+
+SELECT temperature, humidity, timestamp
+FROM "iot_database"."group1_temp001"
+WHERE year = '2025' AND month = '09' AND day = '23'
+
+```
+
 
 
 
