@@ -13,23 +13,8 @@
   
 * It leverages core AWS IoT and analytics services such as AWS Glue, AWS SageMaker, AWS IoT Devices Management, AWS IoT Core, and AWS QuickSight
 
-  ### Architecture Diagram 
+  ### Architecture Flowchart
 
-
-mermaid
-
-flowchart TD;
-    A[IoT Devices (200+)] -->|MQTT| B[AWS IoT Core]
-    B -->|IoT Rule| C[S3: /group/device/date/]
-    C --> D[AWS Glue Crawler]
-    D --> E[Glue Data Catalog]
-    E --> F1[Athena]
-    E --> F2[SageMaker ML Pipelines]
-    E --> F3[QuickSight Dashboards]
-
-
-
----
 ```ruby
 
 
