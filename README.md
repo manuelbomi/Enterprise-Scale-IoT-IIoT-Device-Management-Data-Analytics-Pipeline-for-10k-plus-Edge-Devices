@@ -152,7 +152,7 @@ The Enterprise Data Architect will need to set the thingName and use the device 
 
 Once data is in S3:
 
-2.1 Create Glue Crawlers
+<ins>2.1</ins> Create Glue Crawlers
 
     • Create a crawler per device group or a single one for the bucket
     
@@ -162,7 +162,7 @@ s3://your-bucket-name/group1/
 
     • Crawler auto-detects schema and registers tables in the AWS Glue Data Catalog
 
-2.2 Resulting Table Structure (in Athena/Redshift Spectrum)
+<ins>2.2</ins> Resulting Table Structure (in Athena/Redshift Spectrum)
 
 * Run SQL queries like:
 
