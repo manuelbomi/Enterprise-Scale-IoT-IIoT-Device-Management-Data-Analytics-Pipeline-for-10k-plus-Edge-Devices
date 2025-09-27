@@ -414,7 +414,7 @@ Suggested visuals:
 
 #### Clone the Repository
 
-* git clone https://github.com/your-org/iot-enterprise-platform.git
+* git clone 
 
 * cd iot-enterprise-platform
 
