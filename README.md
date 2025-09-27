@@ -414,7 +414,7 @@ Suggested visuals:
 
 #### Clone the Repository
 
-* git clone 
+* git clone https://github.com/manuelbomi/Enterprise-Scale-IoT-IIoT-Device-Management-Data-Analytics-Pipeline-for-10k-plus-Edge-Devices
 
 * cd iot-enterprise-platform
 
